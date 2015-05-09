@@ -2,6 +2,7 @@
 Repository for tsunami modeling in New Zealand with Jose Borrero and other
 collaborators.
 
+Currently requires the branch `tauranga` from the rjleveque fork of geoclaw.
 
 To create / fetch necessary topography and earthquake source files:
 
