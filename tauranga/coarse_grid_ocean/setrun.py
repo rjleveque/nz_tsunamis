@@ -436,8 +436,8 @@ def setgeo(rundata):
 
 
     # == setdtopo.data values ==
-    #rundata.dtopo_data.dtopofiles = [[3, 3, 3, topodir + 'tohoku_sift_E.tt3']]
-    rundata.dtopo_data.dtopofiles = [[3, 3, 3, topodir + 'Fujii_E.tt3']]
+    rundata.dtopo_data.dtopofiles = [[3, 3, 3, topodir + 'tohoku_sift_E.tt3']]
+    #rundata.dtopo_data.dtopofiles = [[3, 3, 3, topodir + 'Fujii_E.tt3']]
 
     # == setqinit.data values ==
     rundata.qinit_data.qinit_type =  0
