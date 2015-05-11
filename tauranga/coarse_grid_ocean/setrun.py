@@ -305,9 +305,14 @@ def setrun(claw_pkg='geoclaw'):
     # List of refinement ratios at each level (length at least amr_level_max-1)
 
     # 4 degree, 24', 4', 1', 6", 1", 1/3"
-    amrdata.refinement_ratios_x = [10,6,4,10,6,3]
-    amrdata.refinement_ratios_y = [10,6,4,10,6,3]
-    amrdata.refinement_ratios_t = [10,6,4,10,6,3]
+    #amrdata.refinement_ratios_x = [10,6,4,10,6,3]
+    #amrdata.refinement_ratios_y = [10,6,4,10,6,3]
+    #amrdata.refinement_ratios_t = [10,6,4,10,6,3]
+
+    # 4 degree, 24', 3'
+    amrdata.refinement_ratios_x = [10,8]
+    amrdata.refinement_ratios_y = [10,8]
+    amrdata.refinement_ratios_t = [10,8]
 
 
     # Specify type of each aux variable in amrdata.auxtype.
@@ -416,7 +421,7 @@ def setgeo(rundata):
     # Refinement settings
     refinement_data = rundata.refinement_data
     refinement_data.variable_dt_refinement_ratios = True
-    refinement_data.wave_tolerance = 0.02
+    refinement_data.wave_tolerance = 0.01
     refinement_data.deep_depth = 200.0
     refinement_data.max_level_deep = 4
 
