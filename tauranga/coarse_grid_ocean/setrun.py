@@ -102,8 +102,8 @@ def setrun(claw_pkg='geoclaw'):
     # restart_file 'fort.chkNNNNN' specified below should be in 
     # the OUTDIR indicated in Makefile.
 
-    clawdata.restart = False               # True to restart from prior results
-    clawdata.restart_file = 'fort.chk00006'  # File to use for restart data
+    clawdata.restart = False              # True to restart from prior results
+    clawdata.restart_file = 'fort.chk00205'  # File to use for restart data
     
     
     # -------------
@@ -118,8 +118,8 @@ def setrun(claw_pkg='geoclaw'):
     if clawdata.output_style==1:
         # Output ntimes frames at equally spaced times up to tfinal:
         # Can specify num_output_times = 0 for no output
-        clawdata.num_output_times = 50
-        clawdata.tfinal = 50*3600.
+        clawdata.num_output_times = 43
+        clawdata.tfinal = 43*3600.
         clawdata.output_t0 = False  # output at initial (or restart) time?
         
     elif clawdata.output_style == 2:
@@ -309,10 +309,10 @@ def setrun(claw_pkg='geoclaw'):
     #amrdata.refinement_ratios_y = [10,6,4,10,6,3]
     #amrdata.refinement_ratios_t = [10,6,4,10,6,3]
 
-    # 4 degree, 24', 3'
-    amrdata.refinement_ratios_x = [10,8]
-    amrdata.refinement_ratios_y = [10,8]
-    amrdata.refinement_ratios_t = [10,8]
+    # 4 degree, 24', 4'
+    amrdata.refinement_ratios_x = [10,6]
+    amrdata.refinement_ratios_y = [10,6]
+    amrdata.refinement_ratios_t = [10,6]
 
 
     # Specify type of each aux variable in amrdata.auxtype.
