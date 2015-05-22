@@ -347,13 +347,14 @@ def setplot(plotdata):
         #legend(('surface','topography'),loc='lower left')
         plot(t, 0*t, 'k')
         n = int(floor(t.max()/1800.)) + 2
-        xticks([1800*i for i in range(n)],[str(0.5*i) for i in range(n)])
+        #xticks([1800*i for i in range(n)],[str(0.5*i) for i in range(n)])
+        xticks([5*3600*i for i in range(n)],[str(5*i) for i in range(n)])
         xlim(25000,t.max())
         #ylim(-0.5,0.5)
         print "+++ gaugeno = ",current_data.gaugeno
 
     plotaxes.ylimits = [-0.5, 0.5]
-    plotaxes.xlimits = [12.25*3600,20*3600]
+    #plotaxes.xlimits = [12.25*3600,20*3600]
     plotaxes.afteraxes = add_zeroline
 
 
@@ -409,7 +410,7 @@ def setplot(plotdata):
         legend(['Speed','u','v'],'upper left')
         add_zeroline(current_data)
     plotaxes.ylimits = [-1.5,1.5]
-    plotaxes.xlimits = [12.25*3600,20*3600]
+    #plotaxes.xlimits = [12.25*3600,20*3600]
     plotaxes.afteraxes = add_legend
 
 
