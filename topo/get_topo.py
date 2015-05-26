@@ -11,9 +11,9 @@ import os
 from matplotlib.pyplot import savefig
 
 xlimits = (-240,-180)
-ylimits = (-65,65)
+ylimits = (-77,65)
 dx = 4./60.  # 4-minute
-file_name = 'etopo4_-240_-180_-65_65.tt3'
+file_name = 'etopo4_-240_-180_-77_65.tt3'
 ngdc_tools.etopo1_download(xlimits,ylimits,dx,file_name=file_name)
 
 topo = topotools.Topography()
@@ -25,7 +25,7 @@ print "Created ",fname_png
 
 
 xlimits = (-180,-60)
-file_name = 'etopo4_-180_-60_-65_65.tt3'
+file_name = 'etopo4_-180_-60_-77_65.tt3'
 ngdc_tools.etopo1_download(xlimits,ylimits,dx,file_name=file_name)
 
 topo = topotools.Topography()

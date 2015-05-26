@@ -66,12 +66,12 @@ def setrun(claw_pkg='geoclaw'):
     # Lower and upper edge of computational domain:
     clawdata.lower[0] = -240.0         # xlower
     clawdata.upper[0] = -60.0          # xupper
-    clawdata.lower[1] = -64.0          # ylower
+    clawdata.lower[1] = -76.0          # ylower
     clawdata.upper[1] = 64.0          # yupper
     
     # Number of grid cells:
     clawdata.num_cells[0] = 45      # mx
-    clawdata.num_cells[1] = 32      # my
+    clawdata.num_cells[1] = 35      # my
     
 
     # ---------------
@@ -113,7 +113,7 @@ def setrun(claw_pkg='geoclaw'):
     # Specify at what times the results should be written to fort.q files.
     # Note that the time integration stops after the final output time.
  
-    clawdata.output_style = 1
+    clawdata.output_style = 2
  
     if clawdata.output_style==1:
         # Output ntimes frames at equally spaced times up to tfinal:
@@ -126,7 +126,7 @@ def setrun(claw_pkg='geoclaw'):
         # Specify a list or numpy array of output times:
         # Include t0 if you want output at the initial time.
         #times1 = 3600. * np.linspace(1,12,12) 
-        times2 = 3600. * np.linspace(12.5,18.,12)
+        times2 = 3600. * np.linspace(12,48,37)
         #clawdata.output_times = list(times1) + list(times2)
         clawdata.output_times = list(times2)
  
@@ -430,8 +430,8 @@ def setgeo(rundata):
     # == settopo.data values ==
     topodir = '../../topo/'
     topofiles = rundata.topo_data.topofiles 
-    topofiles.append([3, 1, 1, 0.0,1e10, topodir+'etopo4_-240_-180_-65_65.tt3'])
-    topofiles.append([3, 1, 1, 0.0,1e10, topodir+'etopo4_-180_-60_-65_65.tt3'])
+    topofiles.append([3, 1, 1, 0.0,1e10, topodir+'etopo4_-240_-180_-77_65.tt3'])
+    topofiles.append([3, 1, 1, 0.0,1e10, topodir+'etopo4_-180_-60_-77_65.tt3'])
 
     # Note: the TAU_A_750m_c.ttm3 file has dx != dy so requires 
     # rjleveque branch topo_type_parse_values currently

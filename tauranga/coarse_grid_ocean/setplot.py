@@ -135,7 +135,7 @@ def setplot(plotdata):
     plotitem.amr_celledges_show = [0,0,0]
     plotitem.patchedges_show = 0
     plotaxes.xlimits = [-240,-60]
-    plotaxes.ylimits = [-65,65]
+    plotaxes.ylimits = [-76,65]
 
     # add contour lines of bathy if desired:
     plotitem = plotaxes.new_plotitem(plot_type='2d_contour')
