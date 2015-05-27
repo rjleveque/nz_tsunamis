@@ -349,10 +349,14 @@ def setrun(claw_pkg='geoclaw'):
     # Regions:
     # ---------------
     regions = rundata.regiondata.regions 
-    #regions.append([1, 3, 0., 1e9, -360, 360, -90, 90])
-    #regions.append([3, 4, 12*3600., 1e9, -189, -182, -38, -34])
+    regions.append([1, 3, 0., 1e9, -360, 360, -90, 90])
+    regions.append([3, 4, 12*3600., 1e9, -189, -182, -38, -34])
 
-    if 1:
+    regions.append([4, 5, 12.5*3600., 1e9, -184.5, -183, -38, -37])
+    regions.append([5, 6, 12.5*3600., 1e9, -184.1, -183.7, -37.75, -37.4])
+    regions.append([5, 7, 12.5*3600., 1e9, -183.85, -183.815, -37.665, -37.62])
+
+    if 0:
 
         regions.append([1, 1, 0., 1e9, -360, 360, -90, 90])
         regions.append([1, 3, 0., 3*3600., -360, 360, -90, 90])
@@ -361,9 +365,6 @@ def setrun(claw_pkg='geoclaw'):
         regions.append([1, 3, 9*3600., 11*3600, -220, -170, -45, 0])
         regions.append([1, 3, 11*3600., 1e9, -220, -170, -45, -20])
         regions.append([3, 4, 12*3600., 1e9, -189, -182, -38, -34])
-        regions.append([4, 5, 12.5*3600., 1e9, -184.5, -183, -38, -37])
-        regions.append([5, 6, 12.5*3600., 1e9, -184.1, -183.7, -37.75, -37.4])
-        regions.append([5, 7, 12.5*3600., 1e9, -183.85, -183.815, -37.665, -37.62])
 
         # to see refinement around NZ at t=0:
         #regions.append([4, 4, 0., 10, -188, -181, -42,-34])
