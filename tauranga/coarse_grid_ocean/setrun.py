@@ -126,7 +126,7 @@ def setrun(claw_pkg='geoclaw'):
         # Specify a list or numpy array of output times:
         # Include t0 if you want output at the initial time.
         #times1 = 3600. * np.linspace(1,12,12) 
-        times2 = 3600. * np.linspace(12,48,37)
+        times2 = 3600. * np.linspace(12,30,10)
         #clawdata.output_times = list(times1) + list(times2)
         clawdata.output_times = list(times2)
  
@@ -246,13 +246,17 @@ def setrun(claw_pkg='geoclaw'):
 
     gauges.append([1, -183.82219, -37.60287, 12*3600., 1.e9]) # A Beacon
 
-    if 0:
-        # other gauges for fine grid runs:
-        gauges.append([2, -183.8191,-37.6407, 12*3600., 1.e9]) # Tug Berth
-        #gauges.append([3, -183.8191,-37.6596, 12*3600., 1.e9]) # Sulpher Pt wrong
-        gauges.append([3, -183.8245,-37.6596, 12*3600., 1.e9]) # Sulpher Point
-        gauges.append([4, -183.81623,-37.6307, 12*3600., 1.e9]) # Moturiki
+    # other gauges for fine grid runs:
+    gauges.append([2, -183.8191,-37.6407, 12*3600., 1.e9]) # Tug Berth
+    #gauges.append([3, -183.8191,-37.6596, 12*3600., 1.e9]) # Sulpher Pt wrong
+    gauges.append([3, -183.8245,-37.6596, 12*3600., 1.e9]) # Sulpher Point
+    gauges.append([4, -183.81623,-37.6307, 12*3600., 1.e9]) # Moturiki
+    x_ADCP = 176.1656739914625 - 360
+    y_ADCP = -37.63462262944208
+    gauges.append([5, x_ADCP, y_ADCP, 12*3600., 1.e9]) # ADCP
 
+
+    if 0:
         # across entrance to harbor (ADCP location)
         for i in range(6):
             x = -183.838 + i*0.001
@@ -273,7 +277,7 @@ def setrun(claw_pkg='geoclaw'):
     # Specify when checkpoint files should be created that can be
     # used to restart a computation.
 
-    clawdata.checkpt_style = 3
+    clawdata.checkpt_style = 1
 
     if clawdata.checkpt_style == 0:
       # Do not checkpoint at all
@@ -300,19 +304,14 @@ def setrun(claw_pkg='geoclaw'):
     amrdata = rundata.amrdata
 
     # max number of refinement levels:
-    amrdata.amr_levels_max = 4
+    amrdata.amr_levels_max = 6
 
     # List of refinement ratios at each level (length at least amr_level_max-1)
 
     # 4 degree, 24', 4', 1', 6", 1", 1/3"
-    #amrdata.refinement_ratios_x = [10,6,4,10,6,3]
-    #amrdata.refinement_ratios_y = [10,6,4,10,6,3]
-    #amrdata.refinement_ratios_t = [10,6,4,10,6,3]
-
-    # 4 degree, 24', 4', 1'
-    amrdata.refinement_ratios_x = [10,6,4]
-    amrdata.refinement_ratios_y = [10,6,4]
-    amrdata.refinement_ratios_t = [10,6,4]
+    amrdata.refinement_ratios_x = [10,6,4,10,6,3]
+    amrdata.refinement_ratios_y = [10,6,4,10,6,3]
+    amrdata.refinement_ratios_t = [10,6,4,10,6,3]
 
 
     # Specify type of each aux variable in amrdata.auxtype.
@@ -350,11 +349,10 @@ def setrun(claw_pkg='geoclaw'):
     # Regions:
     # ---------------
     regions = rundata.regiondata.regions 
-    regions.append([1, 3, 0., 1e9, -360, 360, -90, 90])
+    #regions.append([1, 3, 0., 1e9, -360, 360, -90, 90])
+    #regions.append([3, 4, 12*3600., 1e9, -189, -182, -38, -34])
 
-    regions.append([3, 4, 12*3600., 1e9, -189, -182, -38, -34])
-
-    if 0:
+    if 1:
 
         regions.append([1, 1, 0., 1e9, -360, 360, -90, 90])
         regions.append([1, 3, 0., 3*3600., -360, 360, -90, 90])
